@@ -41,6 +41,8 @@
     "@unocss/reset": "^0.58.3"
   },
   "devDependencies": {
-    "vite-plugin-dts": "^3.7.0"
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.7.0",
+    "vue-tsc": "^2.0.0"
   }
 }

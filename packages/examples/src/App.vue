@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, h } from "vue";
+import { onMounted, ref } from "vue";
 // import { RouterView } from "vue-router";
 import { themeConfig } from "@/config/theme";
 import zhCN from "ant-design-vue/es/locale/zh_CN";
@@ -33,10 +33,6 @@ onMounted(() => { });
 </script>
 
 <style scoped>
-#app {
-  padding: 20px;
-}
-
 /* Modal 样式 */
 .modal {
   position: fixed;

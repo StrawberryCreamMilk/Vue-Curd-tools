@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "pnpm run --filter @vue-crud-tools/components build && vitepress build",
     "preview": "vitepress preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
