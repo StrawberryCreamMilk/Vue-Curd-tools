@@ -1,0 +1,27 @@
+{
+  "name": "@vue-crud-tools/shared",
+  "version": "1.0.0",
+  "description": "Vue CRUD Tools 公共指令和工具",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "export": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "devDependencies": {
+    "vite-plugin-dts": "^3.9.1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "vue-crud-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter @vue-crud-tools/examples dev",
+    "dev:docs": "pnpm --filter @vue-crud-tools/docs dev",
+    "build": "pnpm --filter @vue-crud-tools/components build",
+    "build:all": "pnpm -r --filter \"./packages/**\" build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.1",
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.7.3",
+    "@types/node": "^25.0.3",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "eslint": "^9.39.2",
+    "lit-html": "^3.3.2",
+    "typescript": "^5.9.3",
+    "unocss": "^66.5.12",
+    "vite": "^7.2.4",
+    "vue-tsc": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "ant-design-vue": "~4.2.6",
+    "vue": "^3.5.26",
+    "vxe-table": "^4.17.40",
+    "xe-utils": "^3.8.4"
+  }
+}

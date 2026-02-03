@@ -1,0 +1,31 @@
+{
+  // "files": [],
+  // "references": [
+  //   { "path": "./tsconfig.app.json" },
+  //   { "path": "./tsconfig.node.json" }
+  // ],
+  "compilerOptions": {
+    "types": [
+      "ant-design-vue/typings/global.d.ts"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@vue-crud-tools/components": [
+        "../components/src"
+      ],
+      "@vue-crud-tools/shared": [
+        "../shared/src"
+      ]
+    },
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": [
+    "src",
+    "../components/src",
+    "../shared/src"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "@vue-crud-tools/components",
+  "version": "1.0.0",
+  "description": "Vue CRUD Tools 组件库",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "export": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/components.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
+    "dev": "vite build --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keyword": [
+    "vue",
+    "vue3",
+    "components",
+    "crud",
+    "ant-design-vue",
+    "vxetable"
+  ],
+  "peerDependencies": {
+    "ant-design-vue": "~4.2.6",
+    "vue": "^3.5.26",
+    "vxe-table": "^4.17.40",
+    "xe-utils": "^3.8.4"
+  },
+  "dependencies": {
+    "@vue-crud-tools/shared": "workspace:*",
+    "@unocss/reset": "^0.58.3"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^3.7.0"
+  }
+}
