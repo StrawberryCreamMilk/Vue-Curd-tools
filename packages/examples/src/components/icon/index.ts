@@ -3,7 +3,7 @@ import type { App } from 'vue'
 import * as AntIcons from "@ant-design/icons-vue"
 
 // 注册全局组件
-const icons = [AntIcons.StepBackwardOutlined, AntIcons.StepForwardOutlined, AntIcons.SearchOutlined]
+const icons = [AntIcons.StepBackwardOutlined, AntIcons.StepForwardOutlined, AntIcons.SearchOutlined, AntIcons.HomeOutlined]
 
 export default {
   install(app: App) {

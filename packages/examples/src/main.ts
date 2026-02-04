@@ -8,7 +8,7 @@ import 'vxe-table/lib/style.css'
 
 // 导入组件库
 import VueCrudTools from '@vue-crud-tools/components'
-// import '../../components/dist/components.css'
+import '../../components/dist/style.css'
 
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
