@@ -1,30 +1,30 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { transformMenuToItems, state } from '@/views/Layout/index';
 defineOptions({
   name: 'SideBarMenu' // 必须和导入时的名称一致
 });
+
+const router = useRouter()
+
+const routes = computed(() => {
+  return router.options.routes
+})
+
+const items = computed(() => {
+  return transformMenuToItems(routes.value as any[])
+})
+
+function selectMenus(e: any) {
+  console.log(e, 'e')
+}
 </script>
 
 <template>
   <div>
-    <a-menu theme="light" mode="inline">
-      <a-sub-menu key="1" title="基础数据管理">
-        <template #icon>
-          <HomeOutlined />
-        </template>
-        <a-menu-item key="11">机构管理</a-menu-item>
-        <a-menu-item key="12">机构作业范围</a-menu-item>
-        <a-menu-item key="13">运费管理</a-menu-item>
-      </a-sub-menu>
-
-      <a-sub-menu key="2" title="车辆管理">
-        <template #icon>
-          <HomeOutlined />
-        </template>
-        <a-menu-item key="21">车型管理</a-menu-item>
-        <a-menu-item key="32">车辆列表</a-menu-item>
-        <a-menu-item key="33">回车管理</a-menu-item>
-      </a-sub-menu>
-    </a-menu>
+    <a-menu v-model:openKeys="state.openKeys" v-model:selectedKeys="state.selectedKeys" :mode="'inline'" :items="items"
+      :theme="'light'" @select="selectMenus" />
   </div>
 </template>
 

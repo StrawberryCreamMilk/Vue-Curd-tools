@@ -28,6 +28,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import SideBar from './components/SideBar.vue';
+
 const selectedKeys1 = ref<string[]>(['2']);
 const selectedKeys2 = ref<string[]>(['1']);
 const openKeys = ref<string[]>(['sub1']);
