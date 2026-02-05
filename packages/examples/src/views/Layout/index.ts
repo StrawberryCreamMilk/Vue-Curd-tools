@@ -1,4 +1,4 @@
-import { h, reactive, ref, computed } from 'vue';
+import { h, reactive, ref, computed, resolveComponent } from 'vue';
 import { ItemType } from 'ant-design-vue';
 
 export const state = reactive({
@@ -33,7 +33,7 @@ export const transformMenuToItems = (menuData: any[]): ItemType[] => {
     return getItem(
       menu.meta?.title || menu.name, // 使用 meta.title 或 name 作为显示文本
       menu.path || menu.id.toString(), // 使用 path 或 id 作为 key
-      menu.meta?.icon ? h(menu.meta.icon) : undefined, // 处理图标
+      menu.meta?.icon ? h(resolveComponent(menu.meta.icon)) : undefined, // 处理图标
       children // 子菜单
     );
   });

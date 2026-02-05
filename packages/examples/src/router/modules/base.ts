@@ -8,7 +8,7 @@ export default {
     {
       name: 'base-department',
       path: '/base/department',
-      meta: { title: '机构管理', parent: 'base' },
+      meta: { title: '机构管理', parent: 'base', icon: 'HomeOutlined' },
       component: () => import('@/views/Base/Department/index.vue'),
     },
     {

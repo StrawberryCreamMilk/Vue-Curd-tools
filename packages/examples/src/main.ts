@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import pinia from '@/stores';
 // import router from './permission'
 
 
@@ -17,6 +18,8 @@ import router from '@/router'
 // 导入根组件
 import App from './App.vue'
 
+import premission from '@/directive'
+
 
 // 创建 Vue 应用实例
 const app = createApp(App)
@@ -32,5 +35,7 @@ app.use(VueCrudTools)
 // app.use(router)
 app.use(icons)
 app.use(router)
+app.use(premission)
+app.use(pinia)
 // 挂载应用
 app.mount('#app')

@@ -1,9 +1,10 @@
-import {resolve} from 'node:path'
-import {defineConfig} from 'vite'
+import { resolve } from 'node:path'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite';
 import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig({
   // 插件配置
@@ -17,6 +18,10 @@ export default defineConfig({
           importStyle: false, // css in js
         }),
       ],
+    }),
+    viteMockServe({
+      mockPath: './src/mock',
+      watchFiles: false
     })
   ],
 
@@ -35,6 +40,7 @@ export default defineConfig({
 
   // 开发服务器配置
   server: {
+    hmr: true,
     port: 3000,      // 端口号
     open: true,      // 启动时自动打开浏览器
   },

@@ -15,7 +15,7 @@ const routes = computed(() => {
 const items = computed(() => {
   return transformMenuToItems(routes.value as any[])
 })
-
+console.log(items, 'items')
 function selectMenus(e: any) {
   console.log(e, 'e')
 }

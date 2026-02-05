@@ -13,7 +13,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "types": [
-      "ant-design-vue/typings/global.d.ts"
+      "ant-design-vue/typings/global.d.ts",
+      "vite/client"
     ],
     "baseUrl": ".",
     "paths": {
@@ -33,6 +34,7 @@
   "include": [
     "src",
     "../components/src",
-    "../shared/src"
+    "../shared/src",
+    "../../types/**/*.d.ts"
   ]
 }

@@ -3,6 +3,7 @@ import Nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 import base from './modules/base'
 import { asyncRoutes } from './asyncRoutes'
+import { usePermissionStore } from '@/stores/index'
 
 Nprogress.configure({
   showSpinner: false
@@ -39,4 +40,11 @@ router.afterEach((to) => {
   Nprogress.done()
   document.title = `${to.meta.title || import.meta.env.VITE_APP_TITLE}`
 })
+
+export const resetRouter = () => {
+  const permissionStore = usePermissionStore()
+  permissionStore.premissionRoutes?.forEach(item => router.removeRoute(item))
+}
+
 export default router
+export * from './asyncRoutes'

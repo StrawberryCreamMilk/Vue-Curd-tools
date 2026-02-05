@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <a-config-provider :theme="themeConfig" :locale="zhCN">
-      <a-style-provider hash-priority="high">
-        <router-view />
-      </a-style-provider>
+      <router-view />
     </a-config-provider>
   </div>
 </template>
