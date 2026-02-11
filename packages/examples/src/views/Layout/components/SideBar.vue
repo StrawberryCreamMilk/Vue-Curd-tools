@@ -4,7 +4,7 @@ import SideBarMenu from './SideBarMenu.vue'
 
 <template>
   <div>
-    <div>logo</div>
+    <!-- <div>logo</div> -->
     <SideBarMenu />
   </div>
 </template>

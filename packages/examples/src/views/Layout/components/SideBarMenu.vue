@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { asyncRoutes } from '@/router/asyncRoutes'
 import { transformMenuToItems, state } from '@/views/Layout/index';
 defineOptions({
   name: 'SideBarMenu' // 必须和导入时的名称一致
@@ -11,13 +12,15 @@ const router = useRouter()
 const routes = computed(() => {
   return router.options.routes
 })
-
 const items = computed(() => {
-  return transformMenuToItems(routes.value as any[])
+  return transformMenuToItems(asyncRoutes as any[])
+  // 下方是所有注册路由包括首页和登录页
+  // return transformMenuToItems(routes.value as any[])
 })
 console.log(items, 'items')
 function selectMenus(e: any) {
-  console.log(e, 'e')
+  // 路由跳转：e.key 就是菜单项的路由路径
+  router.push(e.key)
 }
 </script>
 

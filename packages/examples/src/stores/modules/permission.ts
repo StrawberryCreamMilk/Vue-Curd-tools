@@ -6,7 +6,7 @@ import { asyncRoutes } from '@/router/asyncRoutes'
 export const usePermissionStore = defineStore(
   'permission',
   () => {
-    const currentRole = ref('employee')
+    const currentRole = ref('admin')
     const premissionRoutes = ref([])
     const setCurrentRole = () => {
       currentRole.value = currentRole.value === 'admin' ? 'employee' : 'admin'

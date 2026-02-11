@@ -4,7 +4,8 @@
       <TopMenu ref="refTopMenu" />
     </a-layout-header>
     <a-layout>
-      <a-layout-sider width="200" style="background: #fff">
+      <a-layout-sider theme="light" width="200" style="background: #fff;" class="h-[calc(100vh-55px)] overflow-y-auto"
+        collapsible>
         <SideBar />
       </a-layout-sider>
       <a-layout style="padding: 0 24px 24px">
@@ -14,9 +15,11 @@
           <a-breadcrumb-item>App</a-breadcrumb-item>
         </a-breadcrumb>
         <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
-          Content
-          <AntdButton type="primary" v-premission="['admin']">Primary</AntdButton>
-          <AntdButton v-premission="['admin', 'user']">Default</AntdButton>
+          <router-view v-slot="{ Component }">
+            <keep-alive>
+              <component :is="Component" />
+            </keep-alive>
+          </router-view>
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -39,7 +42,7 @@ onMounted(() => {
 </script>
 <style scoped lang="scss">
 .header-wrapper {
-  background-color: #00badf;
+  background-color: #219bf1;
   height: 55px;
   padding-left: 25px;
   padding-right: 25px;
