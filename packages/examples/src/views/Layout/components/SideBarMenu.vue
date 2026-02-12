@@ -3,12 +3,13 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { asyncRoutes } from '@/router/asyncRoutes'
 import { transformMenuToItems, state } from '@/views/Layout/index';
+import { SideBarMenuEmits } from './interface';
 defineOptions({
   name: 'SideBarMenu' // 必须和导入时的名称一致
 });
 
 const router = useRouter()
-
+const emits = defineEmits<SideBarMenuEmits>();
 const routes = computed(() => {
   return router.options.routes
 })
@@ -20,7 +21,10 @@ const items = computed(() => {
 console.log(items, 'items')
 function selectMenus(e: any) {
   // 路由跳转：e.key 就是菜单项的路由路径
+  console.log(e, 'e')
   router.push(e.key)
+  emits('selectMenu', e.key);
+
 }
 </script>
 

@@ -8,12 +8,8 @@
         collapsible>
         <SideBar />
       </a-layout-sider>
-      <a-layout style="padding: 0 24px 24px">
-        <a-breadcrumb style="margin: 16px 0">
-          <a-breadcrumb-item>Home</a-breadcrumb-item>
-          <a-breadcrumb-item>List</a-breadcrumb-item>
-          <a-breadcrumb-item>App</a-breadcrumb-item>
-        </a-breadcrumb>
+      <a-layout style="padding: 16px">
+        <MultiTab @edit="onEdit" />
         <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
           <router-view v-slot="{ Component }">
             <keep-alive>
@@ -27,9 +23,8 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
-import SideBar from './components/SideBar.vue';
 import { getTodos } from '@/api'
-import TopMenu from './components/TopMenu.vue';
+import { SideBar, TopMenu, MultiTab } from './components';
 
 const selectedKeys1 = ref<string[]>(['2']);
 const selectedKeys2 = ref<string[]>(['1']);
@@ -39,6 +34,10 @@ onMounted(() => {
     console.log(res, 'res')
   })
 })
+
+function onEdit(e) {
+  console.log(e, 'e')
+}
 </script>
 <style scoped lang="scss">
 .header-wrapper {

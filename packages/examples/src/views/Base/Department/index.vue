@@ -5,6 +5,7 @@
 <template>
   <div>
     1
+    <AntdButton type="primary">Primary</AntdButton>
   </div>
 </template>
 
