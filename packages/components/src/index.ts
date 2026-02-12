@@ -1,8 +1,10 @@
-import type {App, Plugin} from 'vue'
+import type { App, Plugin } from 'vue'
 
 // 导入 UnoCSS 样式（会被打包进组件库）
 import 'uno.css'
-import '@unocss/reset/tailwind.css'
+// import '@unocss/reset/tailwind.css'
+import '@unocss/reset/tailwind-compat.css'
+import 'virtual:uno.css';
 
 // 导入指令
 import { clickOutside } from '@vue-crud-tools/shared'
@@ -20,7 +22,7 @@ import { clickOutside } from '@vue-crud-tools/shared'
 // === 按需导出组件 ===
 // import { YourComponent } from './components'
 
-import {CrudTable, AntdButton, VcSelectBox} from "./components";
+import { CrudTable, AntdButton, VcSelectBox } from "./components";
 // 导出组件
 export * from './components'
 export * from './types'
@@ -28,28 +30,28 @@ export * from './utils'
 
 
 const components: any[] = [
-    // YourComponent,
-    CrudTable,
-    AntdButton,
-    VcSelectBox
+  // YourComponent,
+  CrudTable,
+  AntdButton,
+  VcSelectBox
 ]
 
 // === 安装函数 ===
 // 提供 install 方法，支持 Vue.use() 方式安装
-export function install(app:App){
-    // 遍历所有组件并注册全局组件
-    components.forEach(component => {
-        app.component(component.name, component)
-    })
+export function install(app: App) {
+  // 遍历所有组件并注册全局组件
+  components.forEach(component => {
+    app.component(component.name, component)
+  })
 
-    // 注册全局指令
-    app.directive('click-outside', clickOutside)
+  // 注册全局指令
+  app.directive('click-outside', clickOutside)
 }
 
 // === 默认导出 ===
 // 支持 app.use(VueCrudTools) 方式安装
 const VueCrudToolsPlugin: Plugin = {
-    install
+  install
 }
 
 export default VueCrudToolsPlugin
